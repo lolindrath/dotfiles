@@ -27,6 +27,8 @@ Bundle 'airblade/vim-gitgutter'
 " Lightweight status line
 Bundle 'bling/vim-airline'
 set lazyredraw "Required by vim-airline
+" Solarized Color scheme
+Bundle 'altercation/vim-colors-solarized'
 
 filetype plugin indent on
 
@@ -45,6 +47,15 @@ syntax on
 " bash-like file name completion - shows you completion options **************
 set wildmenu
 set wildmode=list:longest
+
+" Tab Navigation *************************************************************
+map <C-l> :tabn<CR>
+map <C-h> :tabp<CR>
+map <C-t> :tabnew<CR>
+
+" Customize Colors ***********************************************************
+set background=dark
+colorscheme solarized
 
 " Searching ******************************************************************
 set hlsearch " Highlight all search matches
