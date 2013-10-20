@@ -53,6 +53,9 @@ map <C-l> :tabn<CR>
 map <C-h> :tabp<CR>
 map <C-t> :tabnew<CR>
 
+nmap <tab> :tabn<CR>
+nmap <s-tab> :tabp<CR>
+
 " Customize Colors ***********************************************************
 set background=dark
 colorscheme solarized
@@ -82,3 +85,30 @@ highlight SpecialKey guifg=#4a4a59
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
 
+" File types ****************************************************************
+au BufNewFile,BufRead *.pp set syn=ruby
+au BufNewFile,BufRead *.gemspec set syn=ruby
+
+" Ruby options **************************************************************
+augroup myfiletypes
+	autocmd!
+	autocmd FileType ruby set ai et sta sw=2 sts=2
+augroup END
+
+" GUI options *****************************************************************
+if has('gui_running')
+	set encoding=utf-8
+	if has('gui_gtk2')
+		set guifont=Droid\ Sans\ Mono\ 12
+	elseif has('mac')
+		set guifont=Droid\ Sans\ Mono\ for\ Powerline:h14
+	else
+		set guifont=Droid\ Sans\ Mono\ 12
+	endif
+	" turn off toolbar and menu
+	set guioptions-=T
+	set guioptions-=menu
+	" colorscheme ir_black
+	set background=dark
+	colorscheme solarized
+end
