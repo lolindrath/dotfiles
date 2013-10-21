@@ -27,6 +27,9 @@ Bundle 'airblade/vim-gitgutter'
 " Lightweight status line
 Bundle 'bling/vim-airline'
 set lazyredraw "Required by vim-airline
+set laststatus=2 " force airline to show
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 " Solarized Color scheme
 Bundle 'altercation/vim-colors-solarized'
 
