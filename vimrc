@@ -145,5 +145,6 @@ let g:rbpt_colorpairs = [
       \ ]
 let g:rbpt_max = 15
 
-
+" ctrlp.vim
+set wildignore+=*/tmp/*,*/public/assets/*
 
