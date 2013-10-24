@@ -22,24 +22,25 @@ fi
 
 # enable color support of ls and also add handy aliases
 if [ "$TERM" != "dumb" ]; then
-	if [ $OSTYPE == "darwin10.0" ]; then
-		alias ls='ls -G'
-		elif [ $OSTYPE == "darwin9.0" ]; then
-		alias ls='ls -G'
-	elif [ $OSTYPE == 'FreeBSD' ]; then
-		alias ls='ls -G'
-	elif [ $OSTYPE == 'linux-gnu' ]; then
-		eval "`dircolors -b`"
-		alias ls='ls --color=auto'
-	fi
+    if [ $OSTYPE == "darwin10.0" ]; then
+        alias ls='ls -G'
+    elif [ $OSTYPE == "darwin9.0" ]; then
+        alias ls='ls -G'
+    elif [ $OSTYPE == 'FreeBSD' ]; then
+        alias ls='ls -G'
+    elif [ $OSTYPE == 'linux-gnu' ]; then
+        eval "`dircolors -b`"
+        alias ls='ls --color=auto'
+    fi
 fi
 
 # Add the homedir bin to path
 export PATH=${HOME}/bin:${PATH}
-# Add /usr/local to $PATH 
+# Add /usr/local to $PATH
 export PATH=/usr/local/bin:/usr/local/sbin:${PATH}
-# Add RVM to PATH for scripting
-PATH=$PATH:$HOME/.rvm/bin 
+
+#RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # Use Liquid Prompt (https://github.com/nojhan/liquidprompt)
 source ${HOME}/dotfiles/liquidprompt
