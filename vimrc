@@ -37,6 +37,7 @@ Bundle 'mileszs/ack.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'bling/vim-bufferline'
 Bundle 'kien/rainbow_parentheses.vim'
+Bundle 'vim-scripts/AutoComplPop'
 
 filetype plugin indent on
 
@@ -54,7 +55,7 @@ syntax on
 
 " bash-like file name completion - shows you completion options **************
 set wildmenu
-set wildmode=list:longest
+set wildmode=list:list,full
 
 " Tab Navigation *************************************************************
 map <C-l> :tabn<CR>
