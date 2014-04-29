@@ -58,12 +58,11 @@ set wildmenu
 set wildmode=list:list,full
 
 " Tab Navigation *************************************************************
-map <C-l> :tabn<CR>
-map <C-h> :tabp<CR>
-map <C-t> :tabnew<CR>
+map <C-l> :bn<CR>
+map <C-h> :bp<CR>
 
-nmap <tab> :tabn<CR>
-nmap <s-tab> :tabp<CR>
+nmap <tab> :bn<CR>
+nmap <s-tab> :bp<CR>
 
 " Customize Colors ***********************************************************
 set background=dark
@@ -108,7 +107,8 @@ augroup END
 if has('gui_running')
     set encoding=utf-8
     if has('gui_gtk2')
-        set guifont=Droid\ Sans\ Mono\ 12
+        "set guifont=Droid\ Sans\ Mono\ 12
+        set guifont=Source\ Code\ Pro\ for\ Powerline\ 12
     elseif has('mac')
         set guifont=Droid\ Sans\ Mono\ for\ Powerline:h14
     else
