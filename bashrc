@@ -49,3 +49,5 @@ source ${HOME}/dotfiles/liquidprompt
 if [ -f ~/.bashrc.local ]; then
     source ${HOME}/.bashrc.local
 fi
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

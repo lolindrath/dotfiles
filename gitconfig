@@ -2,3 +2,34 @@
 email = andrew_williams@comcast.com
 name = Andy Williams
 
+[http]
+	sslVerify = false
+
+[alias]
+ds = diff --staged      # git ds - diff your staged changes == review before committing.
+st = status -sb         # smarter status - include tag and branch info
+fup = log --since '1 day ago' --oneline --author andrew_williams@comcast.com  # I know what you did yesterday - great for follow-ups
+ls = log --pretty=format:"%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]" --decorate --date=short  # pretty one-line log with tags, branches and authors
+lsv = log --pretty=format:"%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]" --decorate --date=short --numstat    # a verbose ls, shows changed files too
+
+# stash shortcuts
+sl = stash list
+sa = stash apply
+ss = stash save
+
+# log related - thanks to @mwd410
+l = log
+lh = log --graph
+la = !git lh --date-order --all 2> /dev/null
+lb = log --graph --simplify-by-decoration
+lba = !git lb --all
+h = !git --no-pager log --graph -n 15
+a = !git --no-pager la -n 15
+
+[color]
+	ui = auto
+[push]
+	default = simple
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
