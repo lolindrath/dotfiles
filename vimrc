@@ -2,43 +2,9 @@
 set nocompatible
 
 " Vundle ********************************************************************
-filetype off " required by Vundle
-
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" let Vundle manage Vundle
-" required!
-Bundle 'gmarik/vundle'
-
-" My Vundles
-
-" Help for commenting in/out code
-Bundle 'scrooloose/nerdcommenter'
-" File tree view
-Bundle 'scrooloose/nerdtree'
-" Markdown syntax highlighting
-Bundle 'tpope/vim-markdown'
-" Match if/elses
-Bundle 'vim-scripts/matchit.zip'
-" Gives you easy fuzzy matching file finding
-Bundle 'kien/ctrlp.vim'
-" Puts git diff in gutter
-Bundle 'airblade/vim-gitgutter'
-" Lightweight status line
-Bundle 'bling/vim-airline'
-set lazyredraw "Required by vim-airline
-set laststatus=2 " force airline to show
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
-" Solarized Color scheme
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'mileszs/ack.vim'
-Bundle 'tpope/vim-fugitive'
-Bundle 'bling/vim-bufferline'
-Bundle 'kien/rainbow_parentheses.vim'
-
-filetype plugin indent on
+if filereadable(expand("~/.vimrc.bundles"))
+  source ~/.vimrc.bundles
+endif
 
 " Tabs ***********************************************************************
 set tabstop=4
@@ -56,12 +22,24 @@ syntax on
 set wildmenu
 set wildmode=list:longest
 
+" Backup *********************************************************************
+set nobackup
+set nowritebackup
+set noswapfile
+
 " Tab Navigation *************************************************************
 map <C-l> :bn<CR>
 map <C-h> :bp<CR>
 
 nmap <tab> :bn<CR>
 nmap <s-tab> :bp<CR>
+
+" File Navigation  ***********************************************************
+" set %% to whatever the current directory is
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+
+map <leader>e :edit %%
+map <leader>v :view %%
 
 " Customize Colors ***********************************************************
 set background=dark
@@ -102,6 +80,9 @@ augroup myfiletypes
     autocmd FileType ruby set ai et sta sw=2 sts=2
 augroup END
 
+" Python Options
+autocmd filetype python set expandtab
+
 " GUI options *****************************************************************
 if has('gui_running')
     set encoding=utf-8
@@ -120,6 +101,16 @@ if has('gui_running')
     set background=dark
     colorscheme solarized
 end
+
+" Quickly edit/reload the vimrc file
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
+
+" RSpec.vim mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
 
 " rainbow_parentheses.vim
 autocmd VimEnter * RainbowParenthesesToggle
@@ -146,7 +137,7 @@ let g:rbpt_colorpairs = [
 let g:rbpt_max = 15
 
 " ctrlp.vim
-set wildignore+=*/tmp/*,*/public/assets/*,*/vendor/bundle/*
+set wildignore+=*/tmp/*,*/public/assets/*,*/vendor/bundle/*,*/node_modules/*
 
 " jump to last position used in file
 if has("autocmd")

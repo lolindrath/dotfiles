@@ -1,0 +1,42 @@
+if &compatible
+  set nocompatible
+end
+
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim/
+"call vundle#rc()
+call vundle#begin()
+
+" Let Vundle manage Vundle
+Plugin 'gmarik/Vundle.vim'
+
+" Help for commenting in/out code
+Plugin 'scrooloose/nerdcommenter'
+" File tree view
+Plugin 'scrooloose/nerdtree'
+" Markdown syntax highlighting
+Plugin 'tpope/vim-markdown'
+" Match if/elses
+Plugin 'vim-scripts/matchit.zip'
+" Gives you easy fuzzy matching file finding
+Plugin 'kien/ctrlp.vim'
+" Puts git diff in gutter
+Plugin 'airblade/vim-gitgutter'
+" Lightweight status line
+Plugin 'bling/vim-airline'
+set lazyredraw "Required by vim-airline
+set laststatus=2 " force airline to show
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+" Solarized Color scheme
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'mileszs/ack.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'bling/vim-bufferline'
+Plugin 'kien/rainbow_parentheses.vim'
+" Run rspec from vim
+Plugin 'thoughtbot/vim-rspec'
+
+call vundle#end()
+filetype plugin indent on
+

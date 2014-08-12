@@ -6,6 +6,7 @@ name = Andy Williams
 	sslVerify = false
 
 [alias]
+co = checkout
 ds = diff --staged      # git ds - diff your staged changes == review before committing.
 st = status -sb         # smarter status - include tag and branch info
 fup = log --since '1 day ago' --oneline --author andrew_williams@comcast.com  # I know what you did yesterday - great for follow-ups
@@ -33,3 +34,11 @@ a = !git --no-pager la -n 15
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[core]
+	editor = /usr/local/bin/vim
