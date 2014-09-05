@@ -36,6 +36,7 @@ Plugin 'bling/vim-bufferline'
 Plugin 'kien/rainbow_parentheses.vim'
 " Run rspec from vim
 Plugin 'thoughtbot/vim-rspec'
+Plugin 'itspriddle/vim-marked'
 
 call vundle#end()
 filetype plugin indent on

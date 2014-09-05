@@ -13,6 +13,9 @@ fup = log --since '1 day ago' --oneline --author andrew_williams@comcast.com  # 
 ls = log --pretty=format:"%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]" --decorate --date=short  # pretty one-line log with tags, branches and authors
 lsv = log --pretty=format:"%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]" --decorate --date=short --numstat    # a verbose ls, shows changed files too
 
+unstage = reset HEAD
+uncommit = reset --soft HEAD^
+
 # stash shortcuts
 sl = stash list
 sa = stash apply
@@ -26,6 +29,10 @@ lb = log --graph --simplify-by-decoration
 lba = !git lb --all
 h = !git --no-pager log --graph -n 15
 a = !git --no-pager la -n 15
+
+# finda searches your aliases - Brett Terpstra
+finda = "!grepalias() { git config --global --get-regexp alias | grep -i \"$1\" | awk -v nr=2 '{sub(/^alias\\./,\"\")};{printf \"\\033[31m%_10s\\033[1;37m\", $1};{sep=FS};{for (x=nr; x<=NF; x++) {printf \"%s%s\", sep, $x; }; print \"\\033[0;39m\"}'; }; grepalias"
+
 
 [color]
 	ui = auto
