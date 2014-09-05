@@ -1,0 +1,40 @@
+# Install native apps
+# Usage: `brew bundle Caskfile`
+
+install caskroom/cask/brew-cask
+tap caskroom/versions
+
+cask install dropbox 2> /dev/null
+cask install google-chrome 2> /dev/null
+cask install iterm2 2> /dev/null
+cask install macvim 2> /dev/null
+cask install sublime-text 2> /dev/null
+cask install virtualbox 2> /dev/null
+cask install vlc 2> /dev/null
+
+cask install adium> /dev/null
+cask install atext> /dev/null
+cask install box-sync> /dev/null
+cask install charles> /dev/null
+cask install day-o> /dev/null
+cask install google-drive> /dev/null
+cask install disk-inventory-x> /dev/null
+cask install evernote> /dev/null
+cask install filezilla> /dev/null
+cask install firefox> /dev/null
+cask install flux> /dev/null
+cask install freemind> /dev/null
+cask install handbrake> /dev/null
+cask install intellij-idea> /dev/null
+cask install jd-gui> /dev/null
+cask install marked> /dev/null
+cask install nvalt> /dev/null
+cask install omnigraffle> /dev/null
+cask install taskpaper> /dev/null
+cask install slack> /dev/null
+cask install truecrypt> /dev/null
+cask install ynab> /dev/null
+cask install spotify> /dev/null
+cask install diskwave> /dev/null
+cask install sourcetree> /dev/null
+
