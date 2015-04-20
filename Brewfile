@@ -26,9 +26,6 @@ install wget --enable-iri
 
 # Install more recent versions of some OS X tools
 install vim --override-system-vi
-install homebrew/dupes/grep
-install homebrew/dupes/screen
-install homebrew/php/php55 --with-gmp
 
 # Install other useful binaries
 install ack
@@ -44,6 +41,7 @@ install curl
 install tmux
 install htop-osx
 install phantomjs
+install hg
 install go
 install leiningen
 

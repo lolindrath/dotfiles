@@ -37,4 +37,6 @@ cask install ynab> /dev/null
 cask install spotify> /dev/null
 cask install diskwave> /dev/null
 cask install sourcetree> /dev/null
+cask install skype > /dev/null
+
 

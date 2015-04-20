@@ -1,9 +1,9 @@
 " We don't want vi compatibility
 set nocompatible
 
-" Vundle ********************************************************************
-if filereadable(expand("~/.vimrc.bundles"))
-  source ~/.vimrc.bundles
+" Vim Plug ********************************************************************
+if filereadable(expand("~/.vimrc.plug"))
+  source ~/.vimrc.plug
 endif
 
 " Tabs ***********************************************************************
@@ -17,6 +17,7 @@ set hidden " allow modified buffers to go into the background instead of needing
 set visualbell " no beeps! only a flash
 set backspace=indent,eol,start " make backspace work more intuitively
 syntax on
+filetype plugin indent on
 
 " bash-like file name completion - shows you completion options **************
 set wildmenu
@@ -43,7 +44,8 @@ map <leader>v :view %%
 
 " Customize Colors ***********************************************************
 set background=dark
-colorscheme solarized
+" colorscheme solarized
+colorscheme railscasts
 
 " Searching ******************************************************************
 set hlsearch " Highlight all search matches
@@ -57,11 +59,14 @@ set ruler " show the current line,char-num you're at
 set showmatch " highlight matching tag when over it
 
 " Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:▸\ ,eol:¬
+set listchars=tab:▸\ ,eol:¬,trail:·,extends:⇢,precedes:⇠
+set list
 
-" Highlight extra whitespace
-highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
+" Highlight trailing whitespace
+highlight! link ExtraWhitespace Todo
+autocmd BufWinEnter,InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd BufWinLeave * call clearmatches()
 
 " Invisible character colors
 highlight NonText guifg=#4a4a59
@@ -70,11 +75,11 @@ highlight SpecialKey guifg=#4a4a59
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
 
-" File types ****************************************************************
+" File types
 au BufNewFile,BufRead *.pp set syn=ruby
 au BufNewFile,BufRead *.gemspec set syn=ruby
 
-" Ruby options **************************************************************
+" Ruby options
 augroup myfiletypes
     autocmd!
     autocmd FileType ruby set ai et sta sw=2 sts=2
@@ -83,6 +88,13 @@ augroup END
 " Python Options
 autocmd filetype python set expandtab
 
+" Git commit Options
+autocmd FileType gitcommit,markdown set nonumber
+autocmd FileType gitcommit,markdown set spell
+
+" Markdown Options
+autocmd FileType markdown,"" set wrap
+
 " GUI options *****************************************************************
 if has('gui_running')
     set encoding=utf-8
@@ -90,7 +102,7 @@ if has('gui_running')
         "set guifont=Droid\ Sans\ Mono\ 12
         set guifont=Source\ Code\ Pro\ for\ Powerline\ 12
     elseif has('mac')
-        set guifont=Droid\ Sans\ Mono\ for\ Powerline:h14
+        set guifont=Source\ Code\ Pro\ for\ Powerline:h14
     else
         set guifont=Droid\ Sans\ Mono\ 12
     endif
@@ -105,12 +117,6 @@ end
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
-
-" RSpec.vim mappings
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
 
 " rainbow_parentheses.vim
 autocmd VimEnter * RainbowParenthesesToggle
@@ -134,10 +140,16 @@ let g:rbpt_colorpairs = [
       \ ['darkred',     'DarkOrchid3'],
       \ ['red',         'firebrick3'],
       \ ]
-let g:rbpt_max = 15
+let g:rbpt_max = len(g:rbpt_colorpairs)
 
 " ctrlp.vim
 set wildignore+=*/tmp/*,*/public/assets/*,*/vendor/bundle/*,*/node_modules/*
+
+" airline
+set lazyredraw
+set laststatus=2
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 
 " jump to last position used in file
 if has("autocmd")

@@ -1,0 +1,35 @@
+call plug#begin('~/vim/plugged')
+
+" Help for commenting in/out code
+Plug 'scrooloose/nerdcommenter'
+" File tree view
+Plug 'scrooloose/nerdtree'
+" Markdown syntax highlighting
+Plug 'tpope/vim-markdown'
+" Match if/elses
+Plug 'vim-scripts/matchit.zip'
+" Gives you easy fuzzy matching file finding
+Plug 'kien/ctrlp.vim'
+" Puts git diff in gutter
+Plug 'airblade/vim-gitgutter'
+" Lightweight status line
+Plug 'bling/vim-airline'
+" Solarized Color scheme
+Plug 'altercation/vim-colors-solarized'
+Plug 'justincampbell/vim-railscasts'
+Plug 'mileszs/ack.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'bling/vim-bufferline'
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'tpope/vim-dispatch'
+
+" Markdown
+Plug 'nelstrom/vim-markdown-folding'
+Plug 'tpope/vim-markdown'
+Plug 'itspriddle/vim-marked'
+
+" Go
+Plug 'fatih/vim-go'
+
+call plug#end()
+
