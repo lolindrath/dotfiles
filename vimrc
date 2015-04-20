@@ -44,8 +44,7 @@ map <leader>v :view %%
 
 " Customize Colors ***********************************************************
 set background=dark
-" colorscheme solarized
-colorscheme railscasts
+colorscheme solarized
 
 " Searching ******************************************************************
 set hlsearch " Highlight all search matches
