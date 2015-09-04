@@ -1,7 +1,7 @@
 call plug#begin('~/vim/plugged')
 
-" Help for commenting in/out code
-Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
 " File tree view
 Plug 'scrooloose/nerdtree'
 " Markdown syntax highlighting
@@ -17,6 +17,8 @@ Plug 'bling/vim-airline'
 " Solarized Color scheme
 Plug 'altercation/vim-colors-solarized'
 Plug 'justincampbell/vim-railscasts'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'whatyouhide/vim-gotham'
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'bling/vim-bufferline'
@@ -30,6 +32,15 @@ Plug 'itspriddle/vim-marked'
 
 " Go
 Plug 'fatih/vim-go'
+
+" Ansible
+Plug 'chase/vim-ansible-yaml'
+
+" Haskell
+Plug 'dag/vim2hs'
+Plug 'eagletmt/ghcmod-vim'
+
+Plug 'nathanaelkane/vim-indent-guides'
 
 call plug#end()
 

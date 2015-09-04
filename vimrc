@@ -28,23 +28,31 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-" Tab Navigation *************************************************************
-map <C-l> :bn<CR>
-map <C-h> :bp<CR>
-
+" Buffer Navigation ***********************************************************
 nmap <tab> :bn<CR>
 nmap <s-tab> :bp<CR>
+
+" Split Navigation ***********************************************************
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+set splitbelow
+set splitright
+
+noremap <leader>v <C-w>v<C-w>l
+noremap <leader>s <C-w>o
 
 " File Navigation  ***********************************************************
 " set %% to whatever the current directory is
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
-map <leader>e :edit %%
-map <leader>v :view %%
-
 " Customize Colors ***********************************************************
 set background=dark
-colorscheme solarized
+" colorscheme solarized
+set t_Co=256
+colorscheme PaperColor
 
 " Searching ******************************************************************
 set hlsearch " Highlight all search matches
@@ -93,6 +101,7 @@ autocmd FileType gitcommit,markdown set spell
 
 " Markdown Options
 autocmd FileType markdown,"" set wrap
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 " GUI options *****************************************************************
 if has('gui_running')
@@ -108,9 +117,6 @@ if has('gui_running')
     " turn off toolbar and menu
     set guioptions-=T
     set guioptions-=menu
-    " colorscheme ir_black
-    set background=dark
-    colorscheme solarized
 end
 
 " Quickly edit/reload the vimrc file
@@ -147,12 +153,32 @@ set wildignore+=*/tmp/*,*/public/assets/*,*/vendor/bundle/*,*/node_modules/*
 " airline
 set lazyredraw
 set laststatus=2
-let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
+let g:airline_theme='papercolor'
 
 " jump to last position used in file
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal g'\"" | endif
 endif
+
+" configure indent guides
+let g:indent_guides_start_level = 1
+let g:indent_guides_guide_size  = 2
+
+" relative line numbers by default
+set relativenumber
+
+" Toggle relative and absolute line numbers
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set number
+  else
+    set relativenumber
+  endif
+endfunc
+
+nnoremap <C-n> :call NumberToggle()<cr>
+
 
