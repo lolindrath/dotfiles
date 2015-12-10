@@ -4,6 +4,8 @@ DOTFILES=${HOME}/dotfiles
 
 mv ${HOME}/.bashrc ${HOME}/.bashrc.bak 2>/dev/null # Move default bashrc out of the way
 
+mkdir -p vim
+
 ln -s ${DOTFILES}/bash_profile ${HOME}/.bash_profile
 ln -s ${DOTFILES}/bashrc ${HOME}/.bashrc
 ln -s ${DOTFILES}/tmux.conf ${HOME}/.tmux.conf
