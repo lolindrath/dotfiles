@@ -45,9 +45,13 @@ export PATH=/usr/local/bin:/usr/local/sbin:${PATH}
 # Use Liquid Prompt (https://github.com/nojhan/liquidprompt)
 source ${HOME}/dotfiles/liquidprompt
 
+# SSH proxy tunnel
+alias tunnel='ssh -ND 1080 lolindrath.com'
+
 # Allow local overrides for bash (if the file exists)
 if [ -f ~/.bashrc.local ]; then
     source ${HOME}/.bashrc.local
 fi
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
