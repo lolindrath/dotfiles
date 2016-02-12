@@ -14,6 +14,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'airblade/vim-gitgutter'
 " Lightweight status line
 Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 " Solarized Color scheme
 Plug 'altercation/vim-colors-solarized'
 Plug 'justincampbell/vim-railscasts'
@@ -36,11 +37,13 @@ Plug 'fatih/vim-go'
 " Ansible
 Plug 'chase/vim-ansible-yaml'
 
-" Haskell
-Plug 'dag/vim2hs'
-Plug 'eagletmt/ghcmod-vim'
-
 Plug 'nathanaelkane/vim-indent-guides'
+
+" Clojure
+Plug 'guns/vim-clojure-static'
+Plug 'tpope/vim-salve'
+Plug 'tpope/vim-fireplace'
+Plug 'tpope/vim-projectionist'
 
 call plug#end()
 

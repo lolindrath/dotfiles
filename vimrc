@@ -168,7 +168,7 @@ let g:indent_guides_start_level = 1
 let g:indent_guides_guide_size  = 2
 
 " relative line numbers by default
-set relativenumber
+"set relativenumber
 
 " Toggle relative and absolute line numbers
 function! NumberToggle()
@@ -179,6 +179,6 @@ function! NumberToggle()
   endif
 endfunc
 
-nnoremap <C-n> :call NumberToggle()<cr>
+" nnoremap <C-N> :call NumberToggle()<cr>
 
 
