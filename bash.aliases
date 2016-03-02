@@ -1,0 +1,20 @@
+# SSH proxy tunnel
+alias tunnel='ssh -ND 1080 lolindrath.com'
+
+# refresh bash
+alias refresh='source ${HOME}/.bashrc'
+
+
+# Work
+# ---- 
+# Gerrit
+alias gdevelop='git push origin HEAD:refs/for/develop'
+alias gdev='git push origin HEAD:refs/for/dev'
+alias grelease='git push origin HEAD:refs/for/release'
+
+# Charles Proxy
+alias proxyon='export http_proxy=http://localhost:8888/; export https_proxy=http://localhost:8888/'
+alias proxyoff='export http_proxy=; export https_proxy=;'
+
+# Akamai debugging
+alias acurl='curl -v -s -H "Pragma: akamai-x-cache-on, akamai-x-cache-remote-on, akamai-x-check-cacheable, akamai-x-get-cache-key, akamai-x-get-extracted-values, akamai-x-get-nonces, akamai-x-get-ssl-client-session-id, akamai-x-get-true-cache-key, akamai-x-ser"'
