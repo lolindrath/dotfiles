@@ -1,13 +1,13 @@
 #!/bin/bash
 
-TOKEN=o9ZYMuoqJ6j1ajMTQTZKG1xo3bMppa
+source $HOME/.pushoverrc
 
 TITLE=$1
 MESSAGE=$2
 GROUP=g73bxd5djzepntr99bdzjrsqmiep7o
 
 curl -s \
-	--form-string "token=$TOKEN" \
+	--form-string "token=$PUSHOVER_API_TOKEN" \
 	--form-string "user=$GROUP" \
 	--form-string "message=$MESSAGE" \
 	--form-string "title=$TITLE" \
