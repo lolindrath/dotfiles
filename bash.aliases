@@ -4,6 +4,14 @@ alias tunnel='ssh -ND 1080 lolindrath.com'
 # refresh bash
 alias refresh='source ${HOME}/.bashrc'
 
+# Shortcuts
+alias dl="cd ~/Downloads"
+
+# Navigation
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
 
 # Work
 # ---- 

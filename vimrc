@@ -11,6 +11,7 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 
+set antialias
 set showmode
 set showcmd
 set hidden " allow modified buffers to go into the background instead of needing to write out them immediately
@@ -167,9 +168,6 @@ endif
 let g:indent_guides_start_level = 1
 let g:indent_guides_guide_size  = 2
 
-" relative line numbers by default
-"set relativenumber
-
 " Toggle relative and absolute line numbers
 function! NumberToggle()
   if(&relativenumber == 1)
@@ -179,6 +177,37 @@ function! NumberToggle()
   endif
 endfunc
 
-" nnoremap <C-N> :call NumberToggle()<cr>
+" Thematic
 
+let g:thematic#defaults = {
+\ 'airline-theme': 'jellybeans',
+\ 'typeface': 'Source Code Pro for Powerline',
+\ 'font-size': 16,
+\ 'transparency': 0,
+\ 'background': 'dark',
+\ 'laststatus': 2,
+\ }
+
+let g:thematic#themes = {
+\  'paper'	   : { 	'colorscheme': 'PaperColor',
+\					'airline-theme': 'papercolor',
+\				   'transparency': 2,
+\				   },
+\  'gotham'	   : { 	'colorscheme': 'gotham',
+\					'airline-theme': 'badwolf',
+\				   'transparency': 2,
+\				   },
+\ 'iawriter'   : { 'colorscheme': 'pencil',
+\                  'airline-theme': 'pencil',
+\                  'background': 'light',
+\                  'columns': 75,
+\                  'font-size': 20,
+\                  'fullscreen': 1,
+\                  'laststatus': 0,
+\                  'linespace': 8,
+\                  'typeface': 'Cousine for Powerline',
+\                },
+\ }
+
+let g:thematic#theme_name = 'paper'
 

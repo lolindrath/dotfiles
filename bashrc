@@ -30,10 +30,6 @@ export PATH=${HOME}/bin:${PATH}
 # Add /usr/local to $PATH
 export PATH=/usr/local/bin:/usr/local/sbin:${PATH}
 
-#RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
 # Use Liquid Prompt (https://github.com/nojhan/liquidprompt)
 source ${HOME}/dotfiles/liquidprompt
 
@@ -43,3 +39,7 @@ if [ -f ~/.bashrc.local ]; then
 fi
 
 source ${HOME}/dotfiles/bash.aliases
+
+#RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

@@ -1,5 +1,6 @@
 call plug#begin('~/vim/plugged')
 
+Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 " File tree view
@@ -15,11 +16,12 @@ Plug 'airblade/vim-gitgutter'
 " Lightweight status line
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-" Solarized Color scheme
+" Color Schemes
 Plug 'altercation/vim-colors-solarized'
-Plug 'justincampbell/vim-railscasts'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'whatyouhide/vim-gotham'
+Plug 'reedes/vim-colors-pencil'
+" Other...
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'bling/vim-bufferline'
@@ -44,6 +46,9 @@ Plug 'guns/vim-clojure-static'
 Plug 'tpope/vim-salve'
 Plug 'tpope/vim-fireplace'
 Plug 'tpope/vim-projectionist'
+
+" Vim Thematic
+Plug 'reedes/vim-thematic'
 
 call plug#end()
 
