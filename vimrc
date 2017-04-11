@@ -51,9 +51,8 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
 " Customize Colors ***********************************************************
 set background=dark
-" colorscheme solarized
 set t_Co=256
-colorscheme PaperColor
+colorscheme badwolf
 
 " Searching ******************************************************************
 set hlsearch " Highlight all search matches
@@ -156,7 +155,7 @@ set lazyredraw
 set laststatus=2
 " let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-let g:airline_theme='papercolor'
+let g:airline_theme='badwolf'
 
 " jump to last position used in file
 if has("autocmd")
@@ -180,7 +179,7 @@ endfunc
 " Thematic
 
 let g:thematic#defaults = {
-\ 'airline-theme': 'jellybeans',
+\ 'airline-theme': 'badwolf',
 \ 'typeface': 'Source Code Pro for Powerline',
 \ 'font-size': 16,
 \ 'transparency': 0,
@@ -197,6 +196,10 @@ let g:thematic#themes = {
 \					'airline-theme': 'badwolf',
 \				   'transparency': 2,
 \				   },
+\  'badwolf'	   : { 	'colorscheme': 'badwolf',
+\					'airline-theme': 'badwolf',
+\				   'transparency': 2,
+\				   },
 \ 'iawriter'   : { 'colorscheme': 'pencil',
 \                  'airline-theme': 'pencil',
 \                  'background': 'light',
@@ -209,5 +212,5 @@ let g:thematic#themes = {
 \                },
 \ }
 
-let g:thematic#theme_name = 'paper'
+let g:thematic#theme_name = 'badwolf'
 

@@ -3,7 +3,7 @@ email = Andrew_Williams@Comcast.com
 name = Andy Williams
 
 [http]
-	sslVerify = false
+	sslVerify = true
 
 [alias]
 co = checkout
@@ -54,3 +54,5 @@ finda = "!grepalias() { git config --global --get-regexp alias | grep -i \"$1\" 
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 	required = true
+[http "https://gopkg.in"]
+	followRedirects = true
