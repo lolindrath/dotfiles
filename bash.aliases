@@ -13,6 +13,8 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
+alias man="tldr"
+
 # Work
 # ---- 
 # Gerrit
