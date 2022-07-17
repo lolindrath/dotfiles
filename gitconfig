@@ -16,6 +16,8 @@ lsv = log --pretty=format:"%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green
 unstage = reset HEAD
 uncommit = reset --soft HEAD^
 
+empty = commit -m 'empty commit' --allow-empty
+
 # stash shortcuts
 sl = stash list
 sa = stash apply
@@ -51,8 +53,9 @@ finda = "!grepalias() { git config --global --get-regexp alias | grep -i \"$1\" 
 	editor = /usr/local/bin/vim
 	excludesfile = /Users/awilli232/.gitignore_global
 [filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
 	required = true
+	process = git-lfs filter-process
 [http "https://gopkg.in"]
 	followRedirects = true

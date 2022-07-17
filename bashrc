@@ -46,3 +46,6 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 
 alias myip='curl ipinfo.io/ip'
+
+alias ugh='rm -rf ~/Library/Developer/Xcode/DerivedData'
+
